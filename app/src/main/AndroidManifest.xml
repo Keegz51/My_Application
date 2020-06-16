@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MyBioRealtiveLayout"></activity>
+        <activity android:name=".MyBioLinearLayout"></activity>
+        <activity android:name=".MyBioRealtiveLayout" />
         <activity android:name=".CurrencyConverter" />
         <activity
             android:name=".MainActivity"
