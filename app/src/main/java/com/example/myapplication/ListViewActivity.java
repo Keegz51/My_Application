@@ -18,7 +18,8 @@ public class ListViewActivity extends AppCompatActivity {
             "My Bio App - Relative Layout",
             "My Bio App - Linear Layout",
             "SMS App",
-            "Currency Converter"
+            "Currency Converter",
+            "Calculator"
     };
 
     @Override
@@ -58,6 +59,11 @@ public class ListViewActivity extends AppCompatActivity {
 
                     case 4:
                         intent = new Intent(ListViewActivity.this, CurrencyConverter.class);
+                        startActivity(intent);
+                        break;
+
+                    case 5:
+                        intent = new Intent(ListViewActivity.this, Calculator.class);
                         startActivity(intent);
                         break;
                 }
