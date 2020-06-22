@@ -13,7 +13,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
     private Button btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9;
 
     //declare operands
-    private Button btnAdd,btnMinus,btnMultiply,btnDivide,btnSqrt,btnSqare,btnOver;
+    private Button btnAdd,btnMinus,btnMultiply,btnDivide,btnSqrt,btnSqare,btnOver,btnEquals;
 
     //declare View
     private TextView txtResult;
@@ -50,6 +50,8 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         btnDivide=findViewById(R.id.btn_divide);
         btnSqrt=findViewById(R.id.btn_sqrt);
         btnSqare=findViewById(R.id.btn_square);
+        btnEquals=findViewById(R.id.btn_equals);
+        btnOver=findViewById(R.id.btn_1overX);
 
         txtResult=findViewById(R.id.View);
 
@@ -158,6 +160,23 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
                 txtResult.setText("÷");
             }
         });
+
+        btnOver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                c.setFunction("Over");
+            }
+        });
+
+        btnEquals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                txtResult.setText(Double.toString(c.globalResult));
+            }
+        });
+
+
 
     }
 

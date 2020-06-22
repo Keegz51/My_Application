@@ -31,6 +31,9 @@ public class Calculations {
         } else if (function.equalsIgnoreCase("Divide")) {
             function = "empty";
             return Divide(number);
+        }else if (function.equalsIgnoreCase("Over")) {
+            function = "empty";
+            return Over(number);
         }
 
         return 0.0;
@@ -61,6 +64,12 @@ public class Calculations {
     public double Divide(double i)
     {
         globalResult=globalResult/i;
+        return  globalResult;
+    }
+
+    public double Over(double i)
+    {
+        globalResult=1/i;
         return  globalResult;
     }
 
