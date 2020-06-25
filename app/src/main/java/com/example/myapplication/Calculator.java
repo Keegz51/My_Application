@@ -16,12 +16,12 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
     private Button btnAdd,btnMinus,btnMultiply,btnDivide,btnSqrt,btnSqare,btnOver,btnEquals;
 
     //declare View
-    private TextView txtResult;
+    private TextView txtResult, txtCalcs;
 
 
 
     //Function variables
-    private double globalResult=0;
+    private String globalResult="";
     private String function="empty";
 
     Calculations c = new Calculations(globalResult,function);
@@ -54,75 +54,76 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         btnOver=findViewById(R.id.btn_1overX);
 
         txtResult=findViewById(R.id.View);
+        txtCalcs=findViewById(R.id.Calcs);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                txtResult.setText(Double.toString(c.Calc(1.0)));
+                txtResult.setText((c.Calc("1")));
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtResult.setText(Double.toString(c.Calc(2.0)));
+                txtResult.setText(c.Calc("2"));
             }
         });
 
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtResult.setText(Double.toString(c.Calc(3.0)));
+                txtResult.setText(c.Calc("3"));
             }
         });
 
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtResult.setText(Double.toString(c.Calc(4.0)));
+                txtResult.setText(c.Calc("4"));
             }
         });
 
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtResult.setText(Double.toString(c.Calc(5.0)));
+                txtResult.setText(c.Calc("5"));
             }
         });
 
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtResult.setText(Double.toString(c.Calc(6.0)));
+                txtResult.setText(c.Calc("6"));
             }
         });
 
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtResult.setText(Double.toString(c.Calc(7.0)));
+                txtResult.setText(c.Calc("7"));
             }
         });
 
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtResult.setText(Double.toString(c.Calc(8.0)));
+                txtResult.setText(c.Calc("8"));
             }
         });
 
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtResult.setText(Double.toString(c.Calc(9.0)));
+                txtResult.setText(c.Calc("9"));
             }
         });
 
         btn0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtResult.setText(Double.toString(c.Calc(0.0)));
+                txtResult.setText(c.Calc("0"));
             }
         });
 
@@ -131,6 +132,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             public void onClick(View view) {
 
                 c.setFunction("Add");
+                txtCalcs.setText(c.globalResult+" " +c.getFunction());
             }
         });
 
@@ -139,7 +141,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             public void onClick(View view) {
 
                 c.setFunction("Minus");
-                txtResult.setText(txtResult.getText()+"-");
+                txtCalcs.setText(c.globalResult+" " +c.getFunction());
             }
         });
 
@@ -148,7 +150,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             public void onClick(View view) {
 
                 c.setFunction("Multiply");
-                txtResult.setText("X");
+                txtCalcs.setText(c.globalResult+" " +c.getFunction());
             }
         });
 
@@ -157,7 +159,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             public void onClick(View view) {
 
                 c.setFunction("Divide");
-                txtResult.setText("÷");
+                txtCalcs.setText(c.globalResult+" " +c.getFunction());
             }
         });
 
@@ -172,7 +174,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View view) {
 
-                txtResult.setText(Double.toString(c.globalResult));
+                txtResult.setText((c.globalResult));
             }
         });
 

@@ -2,27 +2,30 @@ package com.example.myapplication;
 
 public class Calculations {
 
-    double globalResult;
+    String globalResult;
     String function;
 
-    public Calculations(double globalResult,String function)
+    public Calculations(String globalResult,String function)
     {
         this.globalResult=globalResult;
         this.function=function;
     }
 
-    public double Calc(double number)
+    public String Calc(String number)
     {
         if (function.equalsIgnoreCase("empty")) {
             function = "empty";
-            globalResult=0.0;
-            return Add(number);
+           String gr= globalResult+""+number;
+           globalResult=gr;
+            //globalResult=0.0;
+            return globalResult;
 
         } else if (function.equalsIgnoreCase("Add")) {
             function = "empty";
             return Add(number);
 
-        } else if (function.equalsIgnoreCase("Minus")) {
+        }
+        else if (function.equalsIgnoreCase("Minus")) {
             function = "empty";
             return Minus(number);
         } else if (function.equalsIgnoreCase("Multiply")) {
@@ -36,40 +39,35 @@ public class Calculations {
             return Over(number);
         }
 
-        return 0.0;
+        return "";
     }
-    public double reset() {
-        globalResult=0.0;
+    public String Add(String i)
+    {
+        globalResult=Double.toString(Double.parseDouble(globalResult)+Double.parseDouble(i));
         return globalResult;
     }
 
-    public double Add(double i)
+    public String Minus(String i)
     {
-        globalResult=globalResult+i;
-        return globalResult;
-    }
-
-    public double Minus(double i)
-    {
-        globalResult=globalResult-i;
+        globalResult=Double.toString(Double.parseDouble(globalResult)-Double.parseDouble(i));
         return  globalResult;
     }
 
-    public double Multiply(double i)
+    public String Multiply(String i)
     {
-        globalResult=globalResult*i;
+        globalResult=globalResult=Double.toString(Double.parseDouble(globalResult)*Double.parseDouble(i));
         return  globalResult;
     }
 
-    public double Divide(double i)
+    public String Divide(String i)
     {
-        globalResult=globalResult/i;
+        globalResult=globalResult=Double.toString(Double.parseDouble(globalResult)/Double.parseDouble(i));
         return  globalResult;
     }
 
-    public double Over(double i)
+    public String Over(String i)
     {
-        globalResult=1/i;
+        globalResult=Double.toString(1/Double.parseDouble(i));
         return  globalResult;
     }
 
